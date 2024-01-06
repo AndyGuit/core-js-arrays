@@ -49,11 +49,7 @@ function sumArrays(arr1, arr2) {
     return a1.map((el, i) => (a2[i] ? el + a2[i] : el));
   };
 
-  if (arr1.length > arr2.length) {
-    return sum(arr1, arr2);
-  }
-
-  return sum(arr2, arr1);
+  return arr1.length > arr2.length ? sum(arr1, arr2) : sum(arr2, arr1);
 }
 
 /**
