@@ -84,8 +84,7 @@ function findElement(arr, value) {
  */
 function findAllOccurrences(arr, item) {
   return arr.reduce((acc, el) => {
-    // eslint-disable-next-line no-return-assign, no-param-reassign
-    return el === item ? (acc += 1) : acc;
+    return el === item ? acc + 1 : acc;
   }, 0);
 }
 
@@ -133,8 +132,12 @@ function getStringsLength(arr) {
  *   getAverage([ 1, 10, 100, 1000 ])  => 277,75
  *   getAverage([ 2, 3, 3 ])  => 2,67
  */
-function getAverage(/* arr */) {
-  throw new Error('Not implemented');
+function getAverage(arr) {
+  const reduced = arr.reduce((acc, el) => acc + el, 0);
+
+  if (reduced === 0) return 0;
+
+  return Number((reduced / arr.length).toFixed(2));
 }
 
 /**
