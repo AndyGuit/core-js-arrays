@@ -101,6 +101,7 @@ function findAllOccurrences(arr, item) {
  *    removeFalsyValues([ false, 0, NaN, '', undefined ]) => [ ]
  */
 function removeFalsyValues(arr) {
+  // prettier-ignore
   return arr.filter((el) => el);
 }
 
@@ -115,6 +116,7 @@ function removeFalsyValues(arr) {
  *    getStringsLength([ 'angular', 'react', 'ember' ]) => [ 7, 5, 5 ]
  */
 function getStringsLength(arr) {
+  // prettier-ignore
   return arr.map((el) => el.length);
 }
 
@@ -152,7 +154,7 @@ function getAverage(arr) {
  */
 function isSameLength(arr) {
   const firstElLength = arr[0].length;
-
+  // prettier-ignore
   return arr.every((el) => el.length === firstElLength);
 }
 
@@ -276,8 +278,10 @@ function distinct(arr) {
  *    createNDimensionalArray(4, 2) => [[[[0, 0], [0, 0]], [[0, 0], [0, 0]]], [[[0, 0], [0, 0]], [[0, 0], [0, 0]]]]
  *    createNDimensionalArray(1, 1) => [0]
  */
-function createNDimensionalArray(/* n, size */) {
-  throw new Error('Not implemented');
+function createNDimensionalArray(n, size) {
+  if (n === 1) return Array(size).fill(0);
+
+  return Array(size).fill(createNDimensionalArray(n - 1, size));
 }
 
 /**
@@ -395,6 +399,7 @@ function getElementByIndices(/* arr, indices */) {
  *  getFalsyValuesCount([ null, undefined, NaN, false, 0, '' ]) => 6
  */
 function getFalsyValuesCount(arr) {
+  // prettier-ignore
   return arr.filter((val) => !val).length;
 }
 
@@ -448,6 +453,7 @@ function getIndicesOfOddNumbers(numbers) {
  *    getHexRGBValues([]) => []
  */
 function getHexRGBValues(arr) {
+  // prettier-ignore
   return arr.map((el) => `#${el.toString(16).padStart(6, '0').toUpperCase()}`);
 }
 
@@ -482,6 +488,7 @@ function getMaxItems(/* arr, n */) {
  *    findCommonElements([1, 2, 3], ['a', 'b', 'c']) => []
  */
 function findCommonElements(arr1, arr2) {
+  // prettier-ignore
   return arr1.filter((val) => arr2.includes(val));
 }
 
